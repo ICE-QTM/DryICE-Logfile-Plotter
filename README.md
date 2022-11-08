@@ -20,3 +20,6 @@ For each data channel, you can modify its data:
 * The **off.** factor adds an offset (from the text box) to the data
 
 Modifying the values of these two text boxes can make it easier to overlay / compare data.
+
+## Requirements
+This software requires the nptdms module (pip install nptdms)
