@@ -22,4 +22,8 @@ For each data channel, you can modify its data:
 Modifying the values of these two text boxes can make it easier to overlay / compare data.
 
 ## Requirements
-This software requires the nptdms module (pip install nptdms)
+* This software requires the nptdms module (pip install nptdms)
+* All files should be downloaded and the script should run from the root folder
+
+## Known issues
+* Timezone is not taken into account, so displayed time (first / last point) may differ from actual time (as is confirmed in the screenshot when comparing the filename timestamp and the 'first point' timestamp).
