@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         
-        self.setWindowTitle('DryICE Logfile plotter')
+        self.setWindowTitle('DryICE Logfile plotter (v1.1 - 2022-12-20)')
         
         layout_main = QHBoxLayout()
         
@@ -55,6 +55,7 @@ class MainWindow(QMainWindow):
         # Plot section
         self.canvas = MplCanvas(self, width=9, height=6, dpi=100)
         self.canvas.axes.plot([0, 1, 2, 3, 4], [2, 4, 8, 16, 32])
+        self.canvas.fig.tight_layout()
         toolbar = NavigationToolbar2QT(self.canvas, self)
         layout_plot = QVBoxLayout()
         layout_plot.addWidget(toolbar)
@@ -626,90 +627,120 @@ class MainWindow(QMainWindow):
         mult_factor = float(self.mult_param1.text())
         off_factor = float(self.off_param1.text())
         axes.lines[0].set_ydata(self.data[2].data*mult_factor + off_factor)
+        axes.lines[0].set_label(self.data[2].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult2_changed(self, axes, canvas):
         mult_factor = float(self.mult_param2.text())
         off_factor = float(self.off_param2.text())
         axes.lines[1].set_ydata(self.data[3].data*mult_factor + off_factor)
+        axes.lines[1].set_label(self.data[3].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
         
     def mult3_changed(self, axes, canvas):
         mult_factor = float(self.mult_param3.text())
         off_factor = float(self.off_param3.text())
         axes.lines[2].set_ydata(self.data[4].data*mult_factor + off_factor)
+        axes.lines[2].set_label(self.data[4].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
         
     def mult4_changed(self, axes, canvas):
         mult_factor = float(self.mult_param4.text())
         off_factor = float(self.off_param4.text())
         axes.lines[3].set_ydata(self.data[5].data*mult_factor + off_factor)
+        axes.lines[3].set_label(self.data[5].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult5_changed(self, axes, canvas):
         mult_factor = float(self.mult_param5.text())
         off_factor = float(self.off_param5.text())
-        axes.lines[4].set_ydata(self.data[6].data*mult_factor + off_factor)
+        axes.lines[4].set_ydata(self.data[6].data*mult_factor + off_factor)        
+        axes.lines[4].set_label(self.data[6].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult6_changed(self, axes, canvas):
         mult_factor = float(self.mult_param6.text())
         off_factor = float(self.off_param6.text())
         axes.lines[5].set_ydata(self.data[7].data*mult_factor + off_factor)
+        axes.lines[5].set_label(self.data[7].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult7_changed(self, axes, canvas):
         mult_factor = float(self.mult_param7.text())
         off_factor = float(self.off_param7.text())
         axes.lines[6].set_ydata(self.data[8].data*mult_factor + off_factor)
+        axes.lines[6].set_label(self.data[8].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult8_changed(self, axes, canvas):
         mult_factor = float(self.mult_param8.text())
         off_factor = float(self.off_param8.text())
         axes.lines[7].set_ydata(self.data[9].data*mult_factor + off_factor)
+        axes.lines[7].set_label(self.data[9].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult9_changed(self, axes, canvas):
         mult_factor = float(self.mult_param9.text())
         off_factor = float(self.off_param9.text())
         axes.lines[8].set_ydata(self.data[18].data*mult_factor + off_factor)
+        axes.lines[8].set_label(self.data[18].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult10_changed(self, axes, canvas):
         mult_factor = float(self.mult_param10.text())
         off_factor = float(self.off_param10.text())
         axes.lines[9].set_ydata(self.data[19].data*mult_factor + off_factor)
+        axes.lines[9].set_label(self.data[19].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult11_changed(self, axes, canvas):
         mult_factor = float(self.mult_param11.text())
         off_factor = float(self.off_param11.text())
         axes.lines[10].set_ydata(self.data[20].data*mult_factor + off_factor)
+        axes.lines[10].set_label(self.data[20].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult12_changed(self, axes, canvas):
         mult_factor = float(self.mult_param12.text())
         off_factor = float(self.off_param12.text())
         axes.lines[11].set_ydata(self.data[21].data*mult_factor + off_factor)
+        axes.lines[11].set_label(self.data[21].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult13_changed(self, axes, canvas):
         mult_factor = float(self.mult_param13.text())
         off_factor = float(self.off_param13.text())
         axes.lines[12].set_ydata(self.data[22].data*mult_factor + off_factor)
+        axes.lines[12].set_label(self.data[22].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult4_changed(self, axes, canvas):
         mult_factor = float(self.mult_param14.text())
         off_factor = float(self.off_param14.text())
         axes.lines[13].set_ydata(self.data[23].data*mult_factor + off_factor)
+        axes.lines[13].set_label(self.data[23].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
 
     def mult15_changed(self, axes, canvas):
         mult_factor = float(self.mult_param15.text())
         off_factor = float(self.off_param15.text())
         axes.lines[14].set_ydata(self.data[24].data*mult_factor + off_factor)
+        axes.lines[14].set_label(self.data[24].name + ' $\\times$' + str(mult_factor) + ' + ' + str(off_factor))
+        axes.legend()
         canvas.draw_idle()
         
             
