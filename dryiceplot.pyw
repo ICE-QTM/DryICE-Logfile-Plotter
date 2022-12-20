@@ -11,7 +11,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationTool
 from matplotlib.figure import Figure
 import pyqtgraph as pg
 import os
-from functions.qtmimport import *
+from qtmimport.qtmimport import *
 import datetime
 
 # Stuff for PyQt5
